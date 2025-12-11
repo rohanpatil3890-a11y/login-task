@@ -100,11 +100,10 @@ const onloginEvent = async(eve) =>{
             password : loginPassword.value
         }
 
-        let data = makeApiCall(LOGIN_URL, "POST",OBJ);
+        let data =await makeApiCall(LOGIN_URL,"POST",OBJ);
         localStorage.setItem("token", data.token);
         localStorage.setItem("userRole", data.userRole);
         localStorage.setItem("loginSuccess", true);
-        snackbar(data.message, "success");
         window.location.href = "dashboard.html";
         LoginForm.reset()
 
