@@ -114,7 +114,6 @@ const onloginEvent = async(eve) =>{
 }
 
 
-
 SignUpForm.addEventListener("submit", onSignUpEvent);
 LoginForm.addEventListener("submit", onloginEvent);
 

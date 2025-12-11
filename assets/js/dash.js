@@ -1,4 +1,5 @@
 let logOutBtn = document.getElementById("logOutBtn");
+let loder = document.getElementById("loder")
 
 if(localStorage.getItem("loginSuccess")){
 
@@ -16,9 +17,12 @@ if(!localStorage.getItem("token")){
 }
 
 const onlogoutEvent = () =>{
+    loder.classList.remove("d-none")
+
     localStorage.removeItem("token")
     localStorage.removeItem("userRole")
     window.location.href = "index.html"
+    loder.classList.add("d-none")
 }
 
 
