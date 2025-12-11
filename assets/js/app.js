@@ -57,7 +57,7 @@ async function makeApiCall(ApiUrl,method,body){
 
         if(!res.ok){
 
-            let err = data.error | data.message | res.statusText | "Something Went Wrong !!!"
+            let err = data.error || data.message || res.statusText || "Something Went Wrong !!!"
             throw new Error(err)
         }
         return data
@@ -81,6 +81,7 @@ const onSignUpEvent = async(eve) =>{
         let data = await makeApiCall(SIGNUP_URL,"POST",OBJ);
        snackbar(data.message, "success")
        SignUpForm.reset()
+       cl(data)
 
     }
     catch(err){
